@@ -8,8 +8,8 @@ if(isset($_SESSION['dsrez334'])) {
     session_destroy();
 
     header("Location: ../admin");
+
     header("Location: ../login.php");
-
+    
 } 
-
 ?>

@@ -32,12 +32,7 @@
     <!-- Github -->
     <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-github"></i></a>
   </section>
-  <!-- Section: Social media -->
-
-
-
-<!-- Copyright -->
-
+  <!-- Copyright -->
   © 2022 Copyright: Tout Droit Réservé
   <a class="text-white" href="../index.php">
     <br>

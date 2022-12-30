@@ -69,34 +69,20 @@ require("../model/commande.php");
   
 </style>
 <body>
-  <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="../assets/logo.png" height="40" width="150" alt="logo"></a>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link "  aria-current="page" href="../index.php">Home</a>
-            </li>
-            <li class="nav-item">
+<header class="masthead mb-auto bg-light" style="height: 40px;">
+        <div class="inner" >
+          <nav class="nav nav-masthead justify-content-center" style=" height: 40px;" >
+          <h3 class="masthead-brand" style=" padding-left: 0 ;"><a href="../index.php">AKEL</a></h3>
+              <a class="nav-link  col-withe"  aria-current="page" href="../index.php">Home</a>
               <a class="nav-link active" style ="font-weight:bold"  href="./admin/">Create</a>
-            </li>
-            <li class="nav-item outline-primary">
               <a class="nav-link " href="./delet.php">Delete</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link "  href="affiche.php">Products</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link "  href="edite.php">Update</a>
-            </li>
-          </ul>
+            <div style="display: flex; justify-content: flex-end;">
+                <a class="btn "  href="deconnexion.php">Logout</a>
+            </div>
+          </nav>
         </div>
-        <div style="display: flex; justify-content: flex-end;">
-            <a class="btn  btn-danger"  href="deconnection.php">Logout</a>
-        </div>
-      </div>
-    </nav>
   </header>
     <!-- Section: Design Block -->
 <section class="background-radial-gradient overflow-hidden">

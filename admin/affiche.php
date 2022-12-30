@@ -14,6 +14,7 @@ if(empty($_SESSION['dsrez334']))
 
 require("../model/commande.php");
 $produits = affiche();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +32,7 @@ $produits = affiche();
 </head>
 <body>
     <header>
+      
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php"><img src="../assets/logo.png" height="40" width="150" alt="logo"></a>
@@ -40,7 +42,7 @@ $produits = affiche();
                     <a class="nav-link "  aria-current="page" href="../index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link " style ="font-weight:bold"  href="./index.php">Create</a>
+                    <a class="nav-link " style ="font-weight:bold" href="./index.php">Create</a>
                     </li>
                     <li class="nav-item outline-primary">
                     <a class="nav-link " href="./delet.php">Delete</a>
@@ -59,7 +61,7 @@ $produits = affiche();
             </div>
             </nav>
     </header>
-    <section class="background-radial-gradient overflow-hidden">
+<section class="background-radial-gradient overflow-hidden">
   <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
     <div class="row gx-lg-5 align-items-center mb-5">
       <div class="col-lg-6 mb-5 mb-lg-0 position-relative">

@@ -84,6 +84,3 @@ function getProduct($id) {
   }
 }
 ?>
-
-
-?>

@@ -1,5 +1,5 @@
 <?php 
-include ("./model/connexion.php");
+require("./model/connexion.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -126,7 +126,7 @@ if(isset($_POST['email'])) {
     $headers = 'content-type: text/plain; charset="utf-8"'. " ";
 
     if (mail($_POST['email'], 'mot de passe oublié', $message, $headers)){
-      $req =  "UPDATE `admin` SET password = ? email=?";
+      $req =  "UPDATE `admin` SET password= ? email= ?";
       $stmt = $db->prepare($req);
       $stmt->execute([$hashedPassword, $_POST['email']]);
       echo "Mail envoyé";

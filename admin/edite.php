@@ -91,7 +91,7 @@ require("../model/commande.php");
   }
 </style>
 <body>
-  <header>
+<header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.php"><img src="../assets/logo.png" height="40" width="150" alt="logo"></a>
@@ -115,7 +115,7 @@ require("../model/commande.php");
           </ul>
         </div>
         <div style="display: flex; justify-content: flex-end;">
-            <a class="btn  btn-danger"  href="deconnection.php">Logout</a>
+            <a class="btn  btn-danger"  href="deconnexion.php">Logout</a>
         </div>
       </div>
     </nav>
@@ -179,29 +179,5 @@ require("../model/commande.php");
 <?php 
 require("../footer.php");
 ?>
-</body>
+   </body>
 </html>
-<?php if(isset($_POST['valide'])) {
-
- if(isset($_POST['image']) AND isset($_POST['name']) AND isset($_POST['price']) AND isset($_POST['description']))
-   {
-      if(!empty($_POST['image']) AND !empty($_POST['name']) AND !empty($_POST['price']) AND !empty($_POST['description']))
-    {
-        // filtrer les données htmlspecialchar + strip_tags 
-        $image = htmlspecialchars(strip_tags($_POST['image']));
-        $name = htmlspecialchars(strip_tags($_POST['name']));
-        $price = htmlspecialchars(strip_tags($_POST['price']));
-        $description= htmlspecialchars(strip_tags($_POST['description']));
-        try 
-        {
-            addProduct ($image, $name, $price , $description);
-        }
-        catch(Exception $e)
-        {
-            $e->getMessage();
-        }
-    }
-   }
-}
-
-?>
