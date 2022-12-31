@@ -12,7 +12,7 @@ if(empty($_SESSION['dsrez334']))
    header("Location: ../login.php");
 }
 
-require("../model/commande.php");
+require("../model/function.php");
 $myproducts = affiche();
 ?>
 <!DOCTYPE html>
@@ -30,88 +30,53 @@ $myproducts = affiche();
     <title>Connexion admin</title>
 </head>
 
-<body>
-  <header>
-  <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="../assets/logo.png" height="40" width="150" alt="logo"></a>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link "  aria-current="page" href="../index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " style ="font-weight:bold"  href="./index.php">Create</a>
-            </li>
-            <li class="nav-item outline-primary">
-              <a class="nav-link active " style ="font-weight:bold" href="./delet.php">Delete</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link "  href="affiche.php">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link "  href="edithe.php">Update</a>
-            </li>
-          </ul>
-        </div>
-        <div style="display: flex; justify-content: flex-end;">
-            <a class="btn  btn-danger"  href="deconnexion.php">Logout</a>
-        </div>
-      </div>
-    </nav>
+<body style="background:black;">
+
+<nav class="nav nav-masthead d-flex p-2 bd-highlight position-fixed"  style="margin:5px;">
+  <a class="navbar-brand" href="../index.php"><img src="../assets/Akel1.png" height="40" width="120" alt="logo"></a>
+  <a class="nav-link text-light"  href="../index.php">Home</a>
+  <a class="nav-link text-light "  href="./create.php">Create</a>
+  <a class="nav-link text-light"  href="affiche.php">Pin Up</a>
+  <a class="nav-link active text-primary" style ="font-weight:bold" href="./delet.php">Delete</a>
+  <a class="nav-link text-light"  href="edite.php">Update</a>
+  <button class="bg-danger text-center rounded"><a class="btn" href="deconnexion.php">Se déconnecter</a></button>
 </nav>
 
-  </header>
     <!-- Section: Design Block -->
-<section class="background-radial-gradient overflow-hidden">
- 
-  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-        <div class="row gx-lg-5 align-items-center mb-5">
-            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                The best offer  <br />
-                <span style="color: hsl(218, 81%, 75%)">for your business Automobile</span>
-                </h1>
-                <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                </p>
-            </div>
+<section >
 
-            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-              <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-              <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+<div div class="container-fluid " style="height: 100vh; padding-top: 80px;">
+<div class="row">
+            <div class="col-md-4"></div>
+      <div class="col-md-4">
+      <form method="POST">
+      <h1 class="text-light text-center">Supprimer un Produit</h1>
+            <!-- id -->
+          <div class="form-outline mb-4">
+            <label class="form-label text-light" for="form3Example4">Id Produit </label>
+            <input type="number" id="form3Example4" class="form-control" name="id" required />
+          </div>
+            <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4" name="valide">
+           Supprimer un produit
+        </button>
+      </form>              
+</div>
 
-                <div class="card bg-glass">
-                  <div class="card-body px-4 py-5 px-md-5">
-                        <form method="POST">
-                        <h1><strong>Spprimer un Produit</strong></h1>
-                        <!-- id -->
-                        <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example4">Idenfiant du voiture </label>
-                            <input type="number" id="form3Example4" class="form-control" name="id" required />
-                        </div>
-                        
-                        <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-block mb-4" name="valide">
-                            supprimer un produit
-                        </button>
-                        </form>
-                  </div>
-                </div>
-              <div class="card bg-glass"> 
-              <?php foreach($myproducts as $product): ?>
-              <div class="col">
-                <div class="card shadow-sm">
-                    <h3><?= $product -> id ?></h3>
-                    <img src="<?= $product -> image ?>" height="100%">
-                </div>
-              </div>
-              <?php endforeach ?>
-              </div>
-            </div>
-        </div>
+<div class="row"> 
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+      <?php foreach($myproducts as $product): ?>
+        <div class="card shadow-sm" style="margin-bottom:15px;">
+            <h3><?= $product -> id ?></h3>
+            <img src="<?= $product -> image ?>">
+          </div>
+          <?php endforeach ?>
+      </div>
     </div>
+  </div>
+
+  
 </section>
 <!-- Section: Design Block -->
 </body>
@@ -135,6 +100,7 @@ if(isset($_POST['valide']))
         $e->getMessage();
       }
     }
+ 
    }
 }
 ?>

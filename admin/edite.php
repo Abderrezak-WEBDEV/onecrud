@@ -22,7 +22,7 @@ if(empty($_GET['pdt']) AND !is_numeric($_GET['pdt']))
   header("Location: affiche.php");
 }
 
-require("../model/commande.php");
+require("../model/function.php");
 
 // $id = $_get('pdt');
 
@@ -91,35 +91,16 @@ require("../model/commande.php");
   }
 </style>
 <body>
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="../assets/logo.png" height="40" width="150" alt="logo"></a>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link "  aria-current="page" href="../index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style ="font-weight:bold"  href="./admin/">Create</a>
-            </li>
-            <li class="nav-item outline-primary">
-              <a class="nav-link " href="./delet.php">Delete</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link "  href="affiche.php">Products</a>
-            </li>
-            <li class="nav-item">
-                    <a class="nav-link active"  style ="font-weight:bold" href="#">Update</a>
-            </li>
-          </ul>
-        </div>
-        <div style="display: flex; justify-content: flex-end;">
-            <a class="btn  btn-danger"  href="deconnexion.php">Logout</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+
+<nav class="nav nav-masthead d-flex p-2 bd-highlight position-fixed">
+  <a class="navbar-brand" href="../index.php"><img src="../assets/Akel1.png" height="40" width="150" alt="logo"></a>
+  <a class="nav-link text-light"  href="../index.php">Home</a>
+  <a class="nav-link text-light"   href="./admin/">Create</a>
+  <a class="nav-link text-primary"  style ="font-weight:bold" href="affiche.php">Pin Up</a>
+  <a class="nav-link active text-light"  href="./delet.php">Delete</a>
+  <a class="nav-link text-light"  href="edite.php">Update</a>
+  <button class="bg-danger text-center rounded"><a class="btn" href="deconnexion.php">Se déconnecter</a></button>
+</nav>
     <!-- Section: Design Block -->
 <section class="background-radial-gradient overflow-hidden">
  

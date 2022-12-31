@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<footer class="bg-dark text-center text-white" style="background-color: rgba(0, 0, 0, 0.2)">
+<footer class=" text-center text-white" style="background-color: black ;">
 <!-- Grid container -->
 <div class="container p-4 pb-0">
   <!-- Section: Social media -->
@@ -33,10 +33,9 @@
     <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-github"></i></a>
   </section>
   <!-- Copyright -->
+  
   © 2022 Copyright: Tout Droit Réservé
-  <a class="text-white" href="../index.php">
-    <br>
-  <i class="bi bi-arrow-up"></i>Home</a>
+
 </div>
 <!-- Copyright -->
 </footer>

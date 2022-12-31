@@ -58,23 +58,23 @@ require("./model/connexion.php");
   <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="./assets/logo.png" height="40" width="150" alt="logo"></a>
+        <a class="navbar-brand" href="index.php"><img src="./assets/Akel1.png" height="40" width="150" alt="logo"></a>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link "  aria-current="page" href="index.php">Home</a>
+              <a class="nav-link text-light"  href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style ="font-weight:bold"  href="./admin/">Create</a>
-            </li>
-            <li class="nav-item outline-primary">
-              <a class="nav-link " href="./admin/delet.php">Delete</a>
+              <a class="nav-link text-light"   href="./admin/">Create</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link "  href="./admin/affiche.php">Products</a>
+              <a class="nav-link text-light" href="./admin/delet.php">Delete</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link active"  style ="font-weight:bold" href="#">Update</a>
+              <a class="nav-link text-light "  href="./admin/affiche.php">Products</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link text-light"  href="#">Update</a>
             </li>
           </ul>
         </div>
@@ -102,7 +102,7 @@ require("./model/connexion.php");
 
                   <!-- Submit button -->
                   <button type="submit" class="btn btn-primary btn-block mb-4" name="valide">
-                    Send me a randam password
+                    Send me a token
                   </button>
                 </form>
               </div>
@@ -119,14 +119,14 @@ require("footer.php");
 </html>
 <?php 
 if(isset($_POST['email'])) {
-    $password =  uniqid();
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $token =  uniqid();
+    $url = "http://localhost/crudphp/token?token=$token.php";
     
-    $message = "Bonjour , voici votre nouveau mot de passe : $password";
+    $message = "Bonjour , voici votre lien de reinitialisation de mots de passe : $url";
     $headers = 'content-type: text/plain; charset="utf-8"'. " ";
 
     if (mail($_POST['email'], 'mot de passe oublié', $message, $headers)){
-      $req =  "UPDATE `admin` SET password= ? email= ?";
+      $req =  "UPDATE `admin` SET token= ? email= ?";
       $stmt = $db->prepare($req);
       $stmt->execute([$hashedPassword, $_POST['email']]);
       echo "Mail envoyé";
@@ -134,3 +134,6 @@ if(isset($_POST['email'])) {
         echo "une erreur est survenue.. avec votre serveur"; 
     }
 }
+
+?>
+ 

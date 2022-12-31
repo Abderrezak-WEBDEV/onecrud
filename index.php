@@ -1,6 +1,7 @@
 <?php 
 
-require("model/commande.php");
+require("model/function.php");
+
 $myproducts = affiche();
 
 ?>
@@ -20,39 +21,37 @@ $myproducts = affiche();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <title>Boutique LUXRY AUTOMOBILE</title>
 </head>
-<body>
-<header class="masthead mb-auto bg-light">
-  <div class="inner">
-    <nav class="nav nav-masthead justify-content-center">
-      <img class="masthead-brand " style="width:120px; height:40px;" src="./assets/Akel1.png" ><a href="index.php"></a> 
-            <a class="nav-link text-dark active" style ="font-weight:bold;" href="./admin/">Home</a>
-            <a class="nav-link text-dark" href="./admin/">Create</a>
-            <a class="nav-link text-dark" href="./admin/affiche.php">Pin Up</a>
-            <a class="nav-link text-dark" href="./admin/edite.php">Update</a>
-            <a class="nav-link text-dark" href="./admin/delet.php">Delete</a>
-            
+
+<body style="background: black;">
+<nav class="nav nav-masthead d-flex p-2 bd-highlight position-fixed" style="margin:5px;">
+            <a href="index.php"><img class="masthead-brand " style="width:120px; height:40px;" src="./assets/Akel1.png" ></a> 
+            <a class="nav-link text-primary active" style ="font-weight:bold;" href="./admin/">Home</a>
+            <a class="nav-link text-light" href="./admin/create.php">Create</a>
+            <a class="nav-link text-light" href="./admin/affiche.php">Pin Up</a>
+            <a class="nav-link text-light" href="./admin/delet.php">Delete</a>
+            <a class="nav-link text-light" href="./admin/edite.php">Update</a>
             <?php
                 session_start() ;
-
+                
                 if(!isset($_SESSION['dsrez334'])) { ?>
                   
-                <?php if(!empty($_SESSION['dsrez334']))  { ?>
-
-                      <a class="btn  btn-danger" href="./deconnexion.php"></a>
-                  
-                  <?php } ?>
-
-                  <?php if(!isset($_SESSION['dsrez334'])) { ?>
-
+                  <?php if(!empty($_SESSION['dsrez334']))  { ?>
+                    
+                    <a class="btn  btn-danger" href="./deconnexion.php"></a>
+                    
+                    <?php } ?>
+                    
+                    <?php if(!isset($_SESSION['dsrez334'])) { ?>
+                      
+                   <div class="d-flex justify-content-end"> 
                    <a class="btn btn-primary" href="login.php">Login</a> 
+                  </div>
                   
                   <?php } ?>
               <?php } ?>
-                  </div>
-          </nav>
-        </div>
-</header>
+</nav>
 <section class="text-center background-radial-gradient overflow-hidden" style="height:auto;">
+<div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
 <main role="main" class="inner cover" style= margin-top:40px;>
   <?php foreach($myproducts as $product): ?>
         <h1 class="cover-heading" style=" color:aliceblue;"><?= $product -> name ?></h1>
